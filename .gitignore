@@ -5,3 +5,8 @@ build/
 local.properties
 .kotlin/
 .DS_Store
+
+# Signing — never commit keystores or their passwords
+*.jks
+*.keystore
+keystore.properties
