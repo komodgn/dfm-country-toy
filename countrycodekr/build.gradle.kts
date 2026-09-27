@@ -1,6 +1,6 @@
 plugins {
-    id("com.android.dynamic-feature")
-    id("org.jetbrains.kotlin.android")
+    alias(libs.plugins.android.dynamic.feature)
+    alias(libs.plugins.kotlin.android)
 }
 
 android {
