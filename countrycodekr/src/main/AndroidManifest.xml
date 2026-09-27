@@ -3,7 +3,7 @@
     xmlns:dist="http://schemas.android.com/apk/distribution">
 
     <!--
-        This is an empty marker module: zero code, zero resources.
+        Empty marker module: zero code, zero resources.
         android:hasCode="false" means not even a dex file is produced.
         "The fact that it is installed" is itself the country signal.
     -->
@@ -12,29 +12,18 @@
         dist:title="@string/title_countrycodekr">
 
         <!--
-          [Level 1 - local button demo] on-demand
-          Lets you install/detect directly from in-app buttons.
+          [Level 2] Google Play auto-installs this module only for users whose
+          account country is KR. No in-app install button is needed.
         -->
         <dist:delivery>
-            <dist:on-demand />
+            <dist:install-time>
+                <dist:conditions>
+                    <dist:user-countries>
+                        <dist:country dist:code="KR" />
+                    </dist:user-countries>
+                </dist:conditions>
+            </dist:install-time>
         </dist:delivery>
-
-        <!--
-          [Level 2 - real automatic country detection]
-          Remove the on-demand block above and use the block below instead.
-          Then Google Play (or a bundletool device-spec) installs this module
-          only for users whose country is KR.
-
-          <dist:delivery>
-              <dist:install-time>
-                  <dist:conditions>
-                      <dist:user-countries>
-                          <dist:country dist:code="KR" />
-                      </dist:user-countries>
-                  </dist:conditions>
-              </dist:install-time>
-          </dist:delivery>
-        -->
 
         <dist:fusing dist:include="true" />
     </dist:module>
