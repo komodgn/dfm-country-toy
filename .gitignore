@@ -1,4 +1,7 @@
-*/build
+build/
+**/build/
 .idea/
 .gradle
 local.properties
+.kotlin/
+.DS_Store
